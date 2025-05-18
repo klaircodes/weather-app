@@ -1,0 +1,35 @@
+.weather-wrapper {
+  position: relative;
+  width: 300px; /* adjust as needed */
+  height: 500px; /* adjust as needed */
+}
+
+.weather-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/day/ChatGPT\ Image\ May\ 17\,\ 2025\,\ 05_06_41\ PM.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.weather-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/day/frame.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
