@@ -1,35 +1,291 @@
-.weather-wrapper {
-  position: relative;
-  width: 300px; /* adjust as needed */
-  height: 500px; /* adjust as needed */
+body {
+  margin: 0;
+  padding: 0;
+  background: #1b363e;
+  min-height: 100vh;
+  font-family: 'Press Start 2P', cursive;
 }
 
-.weather-bg {
+.weather-app {
+  position: relative;
+  width: 430px;
+  height: 650px;
+  margin: 40px auto;
+}
+
+.bg-img {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('assets/day/ChatGPT\ Image\ May\ 17\,\ 2025\,\ 05_06_41\ PM.png');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url('assets/day/day-bg.png') center/cover no-repeat;
+  border-radius: 32px;
   z-index: 1;
 }
 
-.weather-frame {
+.frame-img {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('assets/day/frame.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: 2;
+  background: url('assets/day/frame.png') center/cover no-repeat;
+  pointer-events: none;
+  z-index: 10; 
+}
+
+.content {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-bar {
+  position: relative;
+  width: 90%;
+  height: 75px;
+  margin: 32px auto 0 auto;
+  display: flex;
   align-items: center;
-  color: white;
+  z-index: 2;
+  top: 55px;
+  padding: none;
+}
+
+.top-bar-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('assets/day/top-bar.png') center/contain no-repeat;
+  z-index: 1;
+}
+
+/* .city-input {
+  background: transparent;
+  border: none;
   font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+  color: #222;
+  width: 220px;
+  margin-left: 18px;
+  outline: none;
+  z-index: 2;
+  position: relative;
+} */
+
+.search-btn {
+  background: url('assets/day/search.png') center/cover no-repeat;
+  border: none;
+  margin-left: 20px;
+  cursor: pointer;
+  z-index: 2;
+  width: 100px;
+  height: 44px;
+  position: relative;
+}
+
+.main-info {
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 100%;
   text-align: center;
+  z-index: 2;
+  color: #fff;
+  text-shadow: 2px 2px #333;
+  position: relative;
+}
+
+.weather-icon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.weather-icon.partly-cloudy { background-image: url('assets/day/partly-cloudy.png'); }
+/* Add more weather icon classes as needed */
+
+.temp {
+  font-size: 40px;
+  margin: 0;
+  color: #ffe68d;
+  letter-spacing: 2px;
+}
+
+.desc {
+  font-size: 24px;
+  color: #ffe68d;
+  margin-top: 6px;
+  text-shadow: 1px 2px #222;
+}
+
+.details-row {
+  width: 100%;
+  display: flex;
+  z-index: 2;
+  padding: 0 0 45px 0;
+  position: absolute;
+  bottom: 0;
+  margin: 20px;
+  padding-left: 10px;;
+}
+
+.detail {
+  background: url('assets/day/detail-row.png') center/cover no-repeat;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  padding: 15px;
+  height: 120px
+}
+
+.detail-icon {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 8px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Custom icons for details */
+.detail-icon.humidity { background-image: url('assets/day/snow.png'); }
+.detail-icon.wind { background-image: url('assets/day/windy.png'); }
+.detail-icon.clouds { background-image: url('assets/day/cloudy.png'); }
+
+.detail-label, .detail-value {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  text-shadow: 1px 1px #222;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.detail-value {
+  font-size: 16px;
+  color: #ffe68d;
+}
+
+
+/* Top Bar Input Field */
+.pixel-corners,
+.pixel-corners--wrapper {
+  clip-path: polygon(0px calc(100% - 6px),
+    3px calc(100% - 6px),
+    3px calc(100% - 3px),
+    6px calc(100% - 3px),
+    6px 100%,
+    calc(100% - 6px) 100%,
+    calc(100% - 6px) calc(100% - 3px),
+    calc(100% - 3px) calc(100% - 3px),
+    calc(100% - 3px) calc(100% - 6px),
+    100% calc(100% - 6px),
+    100% 6px,
+    calc(100% - 3px) 6px,
+    calc(100% - 3px) 3px,
+    calc(100% - 6px) 3px,
+    calc(100% - 6px) 0px,
+    6px 0px,
+    6px 3px,
+    3px 3px,
+    3px 6px,
+    0px 6px);
+  position: relative;
+}
+.pixel-corners {
+  border: 3px solid ;
+  z-index: 9;
+  background: yellow;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+  color: #222;
+  width: 220px;
+  margin-left: 18px;
+  outline: none;
+  z-index: 2;
+  position: relative;
+  padding: 10px 0 10px 5px;
+}
+.pixel-corners--wrapper {
+  width: fit-content;
+  height: fit-content;
+}
+.pixel-corners--wrapper .pixel-corners {
+  display: block;
+  clip-path: polygon(3px 6px,
+    6px 6px,
+    6px 3px,
+    calc(100% - 6px) 3px,
+    calc(100% - 6px) 6px,
+    calc(100% - 3px) 6px,
+    calc(100% - 3px) calc(100% - 6px),
+    calc(100% - 6px) calc(100% - 6px),
+    calc(100% - 6px) calc(100% - 3px),
+    6px calc(100% - 3px),
+    6px calc(100% - 6px),
+    3px calc(100% - 6px));
+}
+.pixel-corners::after,
+.pixel-corners--wrapper::after {
+  content: "";
+  position: absolute;
+  clip-path: polygon(0px calc(100% - 6px),
+    3px calc(100% - 6px),
+    3px calc(100% - 3px),
+    6px calc(100% - 3px),
+    6px 100%,
+    calc(100% - 6px) 100%,
+    calc(100% - 6px) calc(100% - 3px),
+    calc(100% - 3px) calc(100% - 3px),
+    calc(100% - 3px) calc(100% - 6px),
+    100% calc(100% - 6px),
+    100% 6px,
+    calc(100% - 3px) 6px,
+    calc(100% - 3px) 3px,
+    calc(100% - 6px) 3px,
+    calc(100% - 6px) 0px,
+    6px 0px,
+    6px 3px,
+    3px 3px,
+    3px 6px,
+    0px 6px,
+    0px 50%,
+    3px 50%,
+    3px 6px,
+    6px 6px,
+    6px 3px,
+    calc(100% - 6px) 3px,
+    calc(100% - 6px) 6px,
+    calc(100% - 3px) 6px,
+    calc(100% - 3px) calc(100% - 6px),
+    calc(100% - 6px) calc(100% - 6px),
+    calc(100% - 6px) calc(100% - 3px),
+    6px calc(100% - 3px),
+    6px calc(100% - 6px),
+    3px calc(100% - 6px),
+    3px 50%,
+    0px 50%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1e1d1a;
+  display: block;
+  pointer-events: none;
+}
+.pixel-corners::after {
+  margin: -3px;
 }
