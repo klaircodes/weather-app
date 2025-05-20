@@ -1,5 +1,6 @@
 body {
-  background: #242e34;
+  background: transparent;
+  /* background: #242e34; */
   margin: 0;
   padding: 0;
   font-family: 'Press Start 2P', monospace;
@@ -9,7 +10,7 @@ body {
   position: relative;
   width: 430px; 
   height: 600px;
-  margin: 40px auto;
+  margin: 10px auto;
   image-rendering: pixelated;
 }
 
