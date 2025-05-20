@@ -11,36 +11,38 @@
     <div class="bg-img"></div>
     <div class="frame-img"></div>
     <div class="content">
+      <!-- Search Bar -->
       <div class="pixel-corners">
-        <input type="text" class="city-input" value="New York" spellcheck="false" />
-        <button class="search-btn">🔍</button>
+        <input type="text" id="cityInput" class="city-input" placeholder="Enter city" spellcheck="false" value="Ottawa">
+        <button class="search-btn" id="searchBtn">
+        </button>
       </div>
       <!-- Main Weather Info -->
       <div class="main-info">
-        <div class="weather-icon"></div>
-        <div class="temp">25°C</div>
-        <div class="desc">Cloudy</div>
+        <div class="weather-icon" id="mainWeatherIcon"></div>
+        <div class="temp" id="temp">25°C</div>
+        <div class="desc" id="desc">Cloudy</div>
       </div>
       <!-- Details Row -->
       <div class="details-row">
         <div class="detail">
           <div class="detail-icon1"></div>
           <div class="detail-label">Humidity</div>
-          <div class="detail-value">60%</div>
+          <div class="detail-value" id="humidity">60%</div>
         </div>
         <div class="detail">
           <div class="detail-icon2"></div>
           <div class="detail-label">Wind</div>
-          <div class="detail-value">8 km/h</div>
+          <div class="detail-value" id="wind">8 km/h</div>
         </div>
         <div class="detail">
           <div class="detail-icon3"></div>
           <div class="detail-label">Clouds</div>
-          <div class="detail-value">40%</div>
+          <div class="detail-value" id="clouds">40%</div>
         </div>
+      </div>
     </div>
-    </div>
-    <!-- Top Bar -->
   </div>
+  <script src="app.js"></script>
 </body>
 </html>

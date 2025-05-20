@@ -137,7 +137,7 @@ body {
 
 .desc {
   color: #fff2c7;
-  font-size: 30px;
+  font-size: 20px;
   text-shadow: 2px 2px 0 #47392c;
   font-family: 'Press Start 2P', monospace;
 }
@@ -147,7 +147,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 60px;
   z-index: 9;
   margin-left: 24px;
   margin-right: 24px;
@@ -192,7 +192,7 @@ body {
 }
 
 .details-row .detail:nth-child(1) {
-  margin: 0 3px 0 6px;
+  margin: 0 0 0 7px;
 }
 
 .details-row .detail:nth-child(3) {
@@ -226,7 +226,7 @@ body {
 }
 
 .detail-value {
-  font-size: 10px;
+  font-size: 11px;
   color: #ffeabc;
   text-shadow: 1px 1px 0 #47392c;
 }
@@ -386,7 +386,8 @@ body {
   font-family: 'Press Start 2P', monospace;
   outline: none;
   box-shadow: none;
-  padding: 0 10px 0 40px;
+  padding: 0 50px 0 10px ;
+  text-transform: capitalize;
 }
 .city-input--wrapper {
   width: fit-content;
