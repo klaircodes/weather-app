@@ -10,7 +10,8 @@ body {
   position: relative;
   width: 430px; 
   height: 600px;
-  margin: 10px auto;
+  margin: 10px auto;  
+  /* margin: 40px auto; */
   image-rendering: pixelated;
 }
 
@@ -189,7 +190,7 @@ body {
 }
 
 .details-row .detail:nth-child(2) {
-  margin: 0 0 0 6px;
+  margin: 0 0 0 0px;
 }
 
 .details-row .detail:nth-child(1) {
@@ -227,7 +228,7 @@ body {
 }
 
 .detail-value {
-  font-size: 11px;
+  font-size: 10px;
   color: #ffeabc;
   text-shadow: 1px 1px 0 #47392c;
 }
