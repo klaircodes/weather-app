@@ -22,6 +22,7 @@ body {
   background: url('assets/day/day-bg.png') center/cover no-repeat;
   z-index: 1;
   border-radius: 20px;
+  filter: blur(1px);
 }
 
 .frame-img {
